@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" th:href="@{css/style.css}" />
+</head>
+<body>
+    <div class="navbar">
+        <h1>Booking Confirmation</h1>
+    </div>
+
+    <div class="container">
+        <div class="flash-message">
+            <h3>Booking #<span th:text="${booking.id}">1</span> confirmed</h3>
+            <p><strong>Item:</strong> <span th:text="${booking.item.name}">Laptop</span></p>
+            <p><strong>Customer:</strong> <span th:text="${booking.customer.name}">John Doe</span></p>
+            <p><strong>Period:</strong> <span th:text="${booking.startDate}">2024-01-01</span> to <span th:text="${booking.endDate}">2024-01-05</span></p>
+            <p><strong>Duration:</strong> <span th:text="${booking.durationDays}">5</span> days</p>
+            <p><strong>Total Price:</strong> <span th:text="${booking.totalPrice}">125.00</span></p>
+        </div>
+        
+        <a href="/bookings" class="btn">View All Bookings</a>
+        <a href="/" class="btn btn-secondary">Return Home</a>
+    </div>
+</body>
+</html>

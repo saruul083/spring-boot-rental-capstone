@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers Management</title>
+    <link rel="stylesheet" th:href="@{css/style.css}" />
+</head>
+<body>
+    <div class="navbar">
+        <h1>Customers Management</h1>
+    </div>
+
+    <div class="container">
+        <h2>Customers List</h2>
+        
+        <a href="/customers/new" class="btn">Add New Customer</a>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="customer : ${customers}">
+                    <td th:text="${customer.name}">John Doe</td>
+                    <td th:text="${customer.email}">john@example.com</td>
+                    <td th:text="${customer.phone}">555-1234</td>
+                    <td>
+                        <a href="/customers/edit/${customer.id}" class="btn-xs">Edit</a>
+                        <form action="/customers/delete/${customer.id}" method="post" style="display:inline;">
+                            <button type="submit" class="btn-danger btn-xs">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div th:if="${flashMessage}" class="flash-message">
+            <span th:text="${flashMessage}">Customer deleted successfully</span>
+        </div>
+    </div>
+</body>
+</html>

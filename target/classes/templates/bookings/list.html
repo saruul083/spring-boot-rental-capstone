@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings List</title>
+    <link rel="stylesheet" th:href="@{css/style.css}" />
+</head>
+<body>
+    <div class="navbar">
+        <h1>Bookings List</h1>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Customer</th>
+                    <th>Period</th>
+                    <th>Duration</th>
+                    <th>Total Price</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="booking : ${bookings}">
+                    <td th:text="${booking.item.name}">Laptop</td>
+                    <td th:text="${booking.customer.name}">John Doe</td>
+                    <td>
+                        <span th:text="${booking.startDate}">2024-01-01</span> to 
+                        <span th:text="${booking.endDate}">2024-01-05</span>
+                    </td>
+                    <td th:text="${booking.durationDays}">5</td>
+                    <td th:text="|${booking.totalPrice}€|">125.00</td>
+                    <td th:text="${booking.status}">CONFIRMED</td>
+                    <td>
+                        <a href="/bookings/cancel/${booking.id}" class="btn-xs btn-danger">Cancel</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div th:if="${flashMessage}" class="flash-message">
+            <span th:text="${flashMessage}">Booking cancelled successfully</span>
+        </div>
+        
+        <a href="/" class="btn">Return Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+-------------------------------------------------------------------------------
+Test set: com.rental.BookingServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.366 s <<< FAILURE! -- in com.rental.BookingServiceTest
+com.rental.BookingServiceTest.booking_durationAndPriceCalculation -- Time elapsed: 0.354 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: interface com.rental.repository.BookingRepository.
+
+If you're not sure why you're getting this error, please open an issue on GitHub.
+
+
+Java               : 25
+JVM vendor name    : Homebrew
+JVM vendor version : 25.0.2
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 25.0.2
+JVM info           : mixed mode, sharing
+OS name            : Mac OS X
+OS version         : 15.3.2
+
+
+You are seeing this disclaimer because Mockito is configured to create inlined mocks.
+You can learn about inline mocks and their limitations under item #39 of the Mockito class javadoc.
+
+Underlying exception : org.mockito.exceptions.base.MockitoException: Cannot instrument interface com.rental.repository.BookingRepository because it or one of its supertypes could not be initialized
+	at com.rental.BookingServiceTest.setUp(BookingServiceTest.java:28)
+Caused by: org.mockito.exceptions.base.MockitoException: Cannot instrument interface com.rental.repository.BookingRepository because it or one of its supertypes could not be initialized
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:172)
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:403)
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:194)
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:414)
+	... 1 more
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	BookingStatus cannot be resolved to a type
+	BookingStatus cannot be resolved to a type
+
+	at com.rental.repository.BookingRepository.<clinit>(BookingRepository.java:15)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:547)
+	at org.mockito.internal.creation.bytebuddy.InlineBytecodeGenerator.assureInitialization(InlineBytecodeGenerator.java:257)
+	at org.mockito.internal.creation.bytebuddy.InlineBytecodeGenerator.triggerRetransformation(InlineBytecodeGenerator.java:286)
+	at org.mockito.internal.creation.bytebuddy.InlineBytecodeGenerator.mockClass(InlineBytecodeGenerator.java:239)
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.lambda$mockClass$0(TypeCachingBytecodeGenerator.java:78)
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:172)
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:403)
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:194)
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:414)
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.mockClass(TypeCachingBytecodeGenerator.java:75)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMockType(InlineDelegateByteBuddyMockMaker.java:434)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:393)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:372)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:80)
+	at org.mockito.Mockito.mock(Mockito.java:2235)
+	at org.mockito.Mockito.mock(Mockito.java:2150)
+	... 1 more
+
+com.rental.BookingServiceTest.createBooking_conflictDetection -- Time elapsed: 0.005 s <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Mockito cannot mock this class: interface com.rental.repository.BookingRepository.
+
+If you're not sure why you're getting this error, please open an issue on GitHub.
+
+
+Java               : 25
+JVM vendor name    : Homebrew
+JVM vendor version : 25.0.2
+JVM name           : OpenJDK 64-Bit Server VM
+JVM version        : 25.0.2
+JVM info           : mixed mode, sharing
+OS name            : Mac OS X
+OS version         : 15.3.2
+
+
+You are seeing this disclaimer because Mockito is configured to create inlined mocks.
+You can learn about inline mocks and their limitations under item #39 of the Mockito class javadoc.
+
+Underlying exception : java.lang.IllegalArgumentException: Could not create type
+	at com.rental.BookingServiceTest.setUp(BookingServiceTest.java:28)
+Caused by: java.lang.IllegalArgumentException: Could not create type
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:174)
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:403)
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:194)
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:414)
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.mockClass(TypeCachingBytecodeGenerator.java:75)
+	at org.mockito.internal.creation.bytebuddy.InlineBytecodeGenerator.mockClass(InlineBytecodeGenerator.java:242)
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.lambda$mockClass$0(TypeCachingBytecodeGenerator.java:78)
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:172)
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:403)
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:194)
+	at net.bytebuddy.TypeCache$WithInlineExpunction.findOrInsert(TypeCache.java:414)
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.mockClass(TypeCachingBytecodeGenerator.java:75)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMockType(InlineDelegateByteBuddyMockMaker.java:434)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.doCreateMock(InlineDelegateByteBuddyMockMaker.java:393)
+	at org.mockito.internal.creation.bytebuddy.InlineDelegateByteBuddyMockMaker.createMock(InlineDelegateByteBuddyMockMaker.java:372)
+	at org.mockito.internal.creation.bytebuddy.InlineByteBuddyMockMaker.createMock(InlineByteBuddyMockMaker.java:56)
+	at org.mockito.internal.util.MockUtil.createMock(MockUtil.java:99)
+	at org.mockito.internal.MockitoCore.mock(MockitoCore.java:80)
+	at org.mockito.Mockito.mock(Mockito.java:2235)
+	at org.mockito.Mockito.mock(Mockito.java:2150)
+	... 1 more
+Caused by: java.lang.NoClassDefFoundError: BookingStatus
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010)
+	at java.base/java.lang.Class.privateGetPublicMethods(Class.java:3031)
+	at java.base/java.lang.Class.getMethods(Class.java:1996)
+	at org.mockito.internal.creation.bytebuddy.SubclassBytecodeGenerator.hasNonPublicTypeReference(SubclassBytecodeGenerator.java:110)
+	at org.mockito.internal.creation.bytebuddy.SubclassBytecodeGenerator.needsSamePackageClassLoader(SubclassBytecodeGenerator.java:94)
+	at org.mockito.internal.creation.bytebuddy.SubclassBytecodeGenerator.mockClass(SubclassBytecodeGenerator.java:137)
+	at org.mockito.internal.creation.bytebuddy.TypeCachingBytecodeGenerator.lambda$mockClass$0(TypeCachingBytecodeGenerator.java:78)
+	at net.bytebuddy.TypeCache.findOrInsert(TypeCache.java:172)
+	... 20 more
+Caused by: java.lang.ClassNotFoundException: BookingStatus
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490)
+	... 29 more
+

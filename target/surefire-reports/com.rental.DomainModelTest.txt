@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------
+Test set: com.rental.DomainModelTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.049 s <<< FAILURE! -- in com.rental.DomainModelTest
+com.rental.DomainModelTest.booking_status_defaults_to_confirmed -- Time elapsed: 0.012 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The attribute column_name is undefined for the annotation type Column
+
+	at com.rental.model.Item.<init>(Item.java:23)
+	at com.rental.DomainModelTest.booking_status_defaults_to_confirmed(DomainModelTest.java:75)
+
+com.rental.DomainModelTest.item_belongs_to_category_and_hasRate -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The attribute column_name is undefined for the annotation type Column
+
+	at com.rental.model.Item.<init>(Item.java:23)
+	at com.rental.DomainModelTest.item_belongs_to_category_and_hasRate(DomainModelTest.java:26)
+
+com.rental.DomainModelTest.booking_calculatesDurationAndPrice -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The attribute column_name is undefined for the annotation type Column
+
+	at com.rental.model.Item.<init>(Item.java:23)
+	at com.rental.DomainModelTest.booking_calculatesDurationAndPrice(DomainModelTest.java:45)
+
+com.rental.DomainModelTest.booking_status_can_be_cancelled -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The attribute column_name is undefined for the annotation type Column
+
+	at com.rental.model.Item.<init>(Item.java:23)
+	at com.rental.DomainModelTest.booking_status_can_be_cancelled(DomainModelTest.java:88)
+
+com.rental.DomainModelTest.booking_duration_oneDay -- Time elapsed: 0.001 s <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	The attribute column_name is undefined for the annotation type Column
+
+	at com.rental.model.Item.<init>(Item.java:23)
+	at com.rental.DomainModelTest.booking_duration_oneDay(DomainModelTest.java:61)
+

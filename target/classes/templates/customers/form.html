@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Form</title>
+    <link rel="stylesheet" th:href="@{css/style.css}" />
+</head>
+<body>
+    <div class="navbar">
+        <h1>Customer Form</h1>
+    </div>
+
+    <div class="container">
+        <form action th:action="@{/customers/save}" th:object="${customer}" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" th:field="*{name}" required/>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" th:field="*{email}" required/>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone" th:field="*{phone}"/>
+            </div>
+            
+            <button type="submit" class="btn">${customer.id ? 'Update' : 'Create'} Customer</button>
+            <a href="/customers" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
