@@ -1,14 +1,2 @@
 /Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/RentalApplication.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/model/Booking.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/model/BookingStatus.java
 /Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/model/Category.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/model/Customer.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/model/Item.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/repository/BookingRepository.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/repository/CategoryRepository.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/repository/CustomerRepository.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/repository/ItemRepository.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/service/BookingService.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/service/CustomerService.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/service/ItemService.java
-/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/web/HomeController.java
