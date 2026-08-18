@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Items Management</title>
+    <link rel="stylesheet" th:href="@{css/style.css}" />
+</head>
+<body>
+    <div class="navbar">
+        <h1>Items Management</h1>
+    </div>
+
+    <div class="container">
+        <h2>Items List</h2>
+        
+        <a href="/items/new" class="btn">Add New Item</a>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Daily Rate</th>
+                    <th>Available</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${items}">
+                    <td th:text="${item.name}">Laptop</td>
+                    <td th:text="${item.category.name}">Electronics</td>
+                    <td th:text="|${item.dailyRate}€|">25.00</td>
+                    <td th:text="${item.available ? 'Yes' : 'No'}">Yes</td>
+                    <td>
+                        <a href="/items/edit/${item.id}" class="btn-xs">Edit</a>
+                        <form action="/items/delete/${item.id}" method="post" style="display:inline;">
+                            <button type="submit" class="btn-danger btn-xs">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div th:if="${flashMessage}" class="flash-message">
+            <span th:text="${flashMessage}">Item deleted successfully</span>
+        </div>
+    </div>
+</body>
+</html>
