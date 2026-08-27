@@ -1,2 +1,11 @@
 /Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/RentalApplication.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/controller/AuthorController.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/controller/AuthorPageController.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/controller/CategoryController.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/controller/CategoryPageController.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/model/Author.java
 /Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/model/Category.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/repository/AuthorRepository.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/repository/CategoryRepository.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/service/AuthorService.java
+/Users/nippon/Desktop/spring-boot-rental-capstone/src/main/java/com/rental/service/CategoryService.java
