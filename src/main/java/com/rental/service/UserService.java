@@ -6,8 +6,10 @@ import java.util.Locale;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.rental.dto.RegisterRequest;
 import com.rental.dto.UserCreateRequest;
 import com.rental.dto.UserResponse;
+import com.rental.model.Role;
 import com.rental.model.User;
 import com.rental.repository.UserRepository;
 
@@ -19,6 +21,29 @@ public class UserService {
 	public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
 		this.userRepository = userRepository;
 		this.passwordEncoder = passwordEncoder;
+	}
+	
+	public void registerCustomer(RegisterRequest request) {
+		String email = request.getEmail().trim().toLowerCase(Locale.ROOT);
+		
+		if(userRepository.existsByEmail(email)) {
+			System.out.println("Email is already registered");
+		}
+		
+		User user = new User();
+		
+		user.setFirstName(request.getFirstName().trim());
+		
+		user.setLastName(request.getLastName().trim());
+		
+		user.setEmail(request.getEmail().trim());
+		
+		user.setPassword(passwordEncoder.encode(request.getPassword()));
+		
+		user.setRole(Role.CUSTOMER);
+		user.setEnabled(true);
+		
+		userRepository.save(user);
 	}
 	
 	public UserResponse createUser(UserCreateRequest request) {
