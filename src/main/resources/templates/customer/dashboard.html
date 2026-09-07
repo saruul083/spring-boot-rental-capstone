@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>Customer Dashboard</title>
+</head>
+<body>
+
+	<h1>Bookstore Customer Dashboard</h1>
+	
+	<p>
+		Logged in as:
+		<strong th:text="${email}">
+			Customer@example.com
+		</strong>
+	</p>
+	
+	<p>
+		Cart and Orders will be added later
+	</p>
+	<form th:action="@{/logout}" method="post">
+		<button type="submit">
+			Logout
+		</button>
+	</form>
+</body>
+</html>
