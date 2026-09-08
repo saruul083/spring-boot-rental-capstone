@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.rental.dto.AddCartItemRequest;
 import com.rental.dto.CartItemResponse;
 import com.rental.dto.CartResponse;
+import com.rental.dto.UpdateCartItemRequest;
 import com.rental.model.Book;
 import com.rental.model.Cart;
 import com.rental.model.CartItem;
@@ -89,6 +90,37 @@ public class CartService {
 				BigDecimal::add);
 		
 		return new CartResponse(cart.getId(), itemResponses, total);
+	}
+	@Transactional
+	public CartResponse updateQuatinty(Long itemId, UpdateCartItemRequest request) {
+		Cart cart = getOrCreateCurrentCart();
+		
+		CartItem item = cartItemRepository.findById(itemId).orElseThrow();
+		if(!item.getCart().getId().equals(cart.getId())) {
+			System.err.println("Cart item not found");
+		}
+		
+		if(request.quantity() > item.getBook().getStockQuantity()) {
+			System.err.println("Requested quantity exceed stock");
+		}
+		
+		item.setQuantity(request.quantity());
+		
+		cartItemRepository.save(item);
+		return getCurrentCart();
+	}
+	@Transactional
+	public CartResponse removeItem(Long itemId) {
+		Cart cart = getOrCreateCurrentCart();
+		
+		CartItem item = cartItemRepository.findById(itemId).orElseThrow();
+		if(!item.getCart().getId().equals(cart.getId())) {
+			System.err.println("Cart item not found");;
+		}
+		
+		cartItemRepository.delete(item);
+		
+		return getCurrentCart();
 	}
 	
 	private CartItemResponse toResponse(CartItem item) {
